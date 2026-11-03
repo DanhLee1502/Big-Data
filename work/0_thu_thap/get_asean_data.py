@@ -2,7 +2,10 @@ import pandas as pd
 import os
 
 url = "https://storage.googleapis.com/covid19-open-data/v3/epidemiology.csv"
-local_file = "asean_data.csv"
+# Lưu vào <repo>/data/raw/asean_data.csv, bất kể chạy script từ thư mục nào
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+local_file = os.path.join(REPO_ROOT, "data", "raw", "asean_data.csv")
+os.makedirs(os.path.dirname(local_file), exist_ok=True)
 
 # Danh sách mã quốc gia Đông Nam Á
 # Việt Nam (VN), Thái Lan (TH), Malaysia (MY), Singapore (SG), Indonesia (ID), Philippines (PH), Brunei (BN), Campuchia (KH), Lào (LA), Myanmar (MM), Timor-Leste (TL).

@@ -1,0 +1,38 @@
+# Cụm Big Data: HDFS (namenode + datanode) + PySpark/Jupyter
+# Nguồn: docs/bao_cao/final_report.pdf, mục 4.1
+version: "3"
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    environment:
+      - CLUSTER_NAME=bigdata                        # Tên cluster HDFS
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:8020 # URI của HDFS
+    ports:
+      - "9870:9870"                                 # HDFS Web UI
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name            # Lưu metadata bền vững
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode
+    environment:
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:8020 # Trỏ đến namenode
+    depends_on:
+      - namenode                                    # Khởi động sau namenode
+    volumes:
+      - hadoop_datanode:/hadoop/dfs/data            # Lưu data block bền vững
+
+  spark:
+    image: jupyter/pyspark-notebook:latest
+    container_name: spark-jupyter
+    ports:
+      - "8888:8888"                                 # JupyterLab
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ./work:/home/jovyan/work                    # Đồng bộ thư mục code
+
+volumes:
+  hadoop_namenode:
+  hadoop_datanode:
