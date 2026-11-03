@@ -1,13 +1,5 @@
 # 🦠 Xử lý và phân tích dữ liệu COVID-19 khu vực Đông Nam Á
 
-Đồ án cuối kỳ học phần **Dữ liệu lớn (858017)** – Khoa Toán - Ứng dụng, Trường Đại học Sài Gòn.
-
-| | |
-|---|---|
-| **Sinh viên** | Lê Thành Danh (3123580005) · Nguyễn Đăng Tiến (3123580050) |
-| **Lớp** | DDU1231 |
-| **Giảng viên hướng dẫn** | Vũ Ngọc Thanh Sang |
-
 ## Bài toán
 
 Đại dịch COVID-19 tại Đông Nam Á diễn ra không đồng đều: mỗi quốc gia bùng phát vào những thời điểm khác nhau, đối mặt với những biến chủng khác nhau và có năng lực y tế rất khác nhau. Câu hỏi đặt ra là:
@@ -25,7 +17,7 @@
 
 ## Dữ liệu
 
-Dữ liệu lấy từ [Google COVID-19 Open Data](https://health.google.com/covid-19/open-data/), nguồn tổng hợp và chuẩn hóa số liệu từ WHO, CDC và bộ y tế các nước. Từ file toàn cầu hơn 7 GB, nhóm lọc ra **394.165 bản ghi** của Việt Nam, Thái Lan, Malaysia, Singapore, Indonesia, Philippines, Brunei, Campuchia, Lào, Myanmar và Timor-Leste, gồm số ca mắc, tử vong, phục hồi và xét nghiệm theo ngày.
+Dữ liệu lấy từ [Google COVID-19 Open Data](https://health.google.com/covid-19/open-data/), nguồn tổng hợp và chuẩn hóa số liệu từ WHO, CDC và bộ y tế các nước. Từ file toàn cầu hơn 7 GB, dữ liệu được lọc còn **394.165 bản ghi** của Việt Nam, Thái Lan, Malaysia, Singapore, Indonesia, Philippines, Brunei, Campuchia, Lào, Myanmar và Timor-Leste, gồm số ca mắc, tử vong, phục hồi và xét nghiệm theo ngày.
 
 ## Phương pháp
 
